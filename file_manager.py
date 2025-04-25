@@ -1,7 +1,6 @@
 import os
 import shutil
 from pathlib import Path
-from datetime import datetime
 
 # Automatically get the Downloads folder path
 folder_path = str(Path.home() / "Downloads")
@@ -38,8 +37,5 @@ for file in os.listdir(folder_path):
             os.makedirs(target_folder, exist_ok=True)
             shutil.move(file_path, os.path.join(target_folder, file))
 
-# Log when the script runs
-with open(os.path.join(folder_path, "file_manager_log.txt"), "a") as log:
-    log.write(f"Ran file manager at {datetime.now()}\n")
 
 print("✅ File organization complete!")
